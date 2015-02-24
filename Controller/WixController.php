@@ -66,10 +66,6 @@ abstract class WixController extends Controller
             throw new MissingParametersException('Could not find a component id (originCompId or compId query string parameter).');
         }
 
-        if (preg_match("/^(TPWdgt|TPSttngs|TPSctn)/", $componentId) == false) {
-            throw new MissingParametersException('Invalid component id. should be in the format of "TPWdgt", "TPSctn" or "TPSttngs" with a digit appended to it.');
-        }
-
         if ($full === false) {
             $componentId = preg_replace("/^(TPWdgt|TPSttngs|TPSctn)/", "", $componentId);
         }
